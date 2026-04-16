@@ -64,6 +64,7 @@ nav a:hover {
 
 /* Sección Hero (Inicio con fondo oscuro) */
 .hero {
+    position: relative;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/fondo-principal.jpeg');
     background-position: center;
@@ -206,13 +207,66 @@ button {
 
 button:hover { background-color: #e65c00; }
 
-/* Footer Negro */
-footer { 
-    background-color: var(--black-bg); 
-    color: var(--white-bg); 
-    text-align: center; 
-    padding: 30px 20px; 
-    border-top: 3px solid var(--primary-color);
+.boletin-flotante {
+    position: absolute;
+    top: 110px; /* Lo bajamos un poco para que no choque con el menú negro */
+    right: 5%;  /* Lo pegamos al lado derecho */
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro semi-transparente */
+    backdrop-filter: blur(5px); /* Efecto cristal moderno */
+    border: 1px solid var(--primary-color); /* Borde naranja */
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 280px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 10;
+    animation: flotar 3s ease-in-out infinite; /* Animación suave */
 }
 
-footer p { margin: 5px 0; }
+.icono-bt-mini {
+    width: 35px;
+    height: 35px;
+    filter: invert(1) drop-shadow(0 0 5px var(--primary-color)); 
+}
+
+.boletin-texto {
+    text-align: left;
+}
+
+.boletin-texto p {
+    color: var(--white-bg);
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.badge-pronto {
+    background-color: var(--primary-color);
+    color: var(--white-bg);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animación para que suba y baje suavemente */
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* En celulares (pantallas pequeñas), lo movemos abajo para que no estorbe el texto principal */
+@media (max-width: 768px) {
+    .boletin-flotante {
+        top: auto;
+        bottom: 30px;
+        right: 50%;
+        transform: translateX(50%); /* Lo centramos abajo */
+        animation: none; /* Quitamos la animación en celular para no distraer */
+    }
+}
