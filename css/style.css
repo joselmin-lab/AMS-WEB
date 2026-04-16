@@ -1,0 +1,218 @@
+/* Variables de Colores Corporativos: Naranja, Negro y Blanco */
+:root {
+    --primary-color: #ff6600; /* Naranja corporativo */
+    --black-bg: #000000;      /* Negro puro */
+    --dark-gray: #1a1a1a;     /* Gris oscuro para contrastes */
+    --white-bg: #ffffff;      /* Blanco */
+    --text-color: #333333;    /* Texto general oscuro */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: var(--white-bg);
+}
+
+h1, h2, h3 { margin: 0; }
+
+/* Navegación (Header Negro con textos blancos y logo) */
+header {
+    background-color: var(--black-bg);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 3px solid var(--primary-color); /* Línea naranja inferior */
+}
+
+/* Estilo para el Logo */
+.logo img {
+    height: 60px; /* Ajusta este valor según el tamaño de tu logo */
+    width: auto;
+    display: block;
+}
+
+.logo {
+    color: var(--white-bg);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav a {
+    color: var(--white-bg);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover { 
+    color: var(--primary-color);
+}
+
+/* Sección Hero (Inicio con fondo oscuro) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/fondo-principal.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90% auto;
+    background-color: var(--black-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-bg);
+    padding: 0 20px;
+}
+
+.hero-content {
+    margin-top: 60px;
+}
+
+.hero h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 20px; 
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.hero p { 
+    font-size: 1.2rem; 
+    max-width: 700px; 
+    margin: 0 auto 30px auto; 
+}
+
+/* Botones Naranjas (Generales) */
+.btn {
+    padding: 15px 35px;
+    background-color: var(--primary-color);
+    color: var(--white-bg);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.btn:hover { 
+    background-color: #e65c00; 
+    transform: scale(1.05);
+}
+
+/* Secciones Generales */
+section { padding: 100px 5%; }
+
+.section-title { 
+    text-align: center; 
+    font-size: 2.5rem; 
+    margin-bottom: 50px; 
+    color: var(--black-bg); 
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Quiénes Somos (Corregido con flexbox y min-height) */
+.nosotros { 
+    text-align: center; 
+    min-height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.nosotros-text { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
+
+/* Productos (Aviso) */
+.productos { 
+    background-color: #f5f5f5; 
+    text-align: center; 
+}
+
+.aviso-productos {
+    background-color: var(--white-bg);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.aviso-productos h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.aviso-productos p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn-aviso {
+    margin-top: 15px;
+}
+
+/* --- ESTILOS DE FORMULARIOS (Necesarios para contacto.html) --- */
+form { display: flex; flex-direction: column; gap: 20px; }
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+textarea { resize: vertical; height: 150px; }
+
+button {
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--white-bg);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+button:hover { background-color: #e65c00; }
+
+/* Footer Negro */
+footer { 
+    background-color: var(--black-bg); 
+    color: var(--white-bg); 
+    text-align: center; 
+    padding: 30px 20px; 
+    border-top: 3px solid var(--primary-color);
+}
+
+footer p { margin: 5px 0; }
