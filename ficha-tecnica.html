@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Técnica | AMS Shocks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para la ficha técnica */
+        .ficha-section {
+            padding: 120px 20px 60px; /* Espacio para el header fijo */
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .volver-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #ff6600;
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .volver-btn:hover {
+            color: #fff;
+        }
+        
+        /* Galería de imágenes verticales */
+        .galeria-imagenes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .galeria-imagenes img {
+            width: 100%;
+            height: auto;
+            max-height: 600px; /* Limita la altura para que mantengan formato vertical */
+            object-fit: contain;
+            border-radius: 8px;
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 10px;
+        }
+
+        /* Caja de especificaciones */
+        .ficha-detalles {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .ficha-detalles h2 {
+            color: #ff6600;
+            font-family: 'Oswald', sans-serif;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        
+        /* Lista a dos columnas con checks */
+        .lista-caracteristicas {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .lista-caracteristicas li {
+            position: relative;
+            padding-left: 35px;
+            color: #e0e0e0;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        .lista-caracteristicas li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6600;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación (Enlaces apuntan a index.html) -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Logo AMS Shocks">
+        </a>
+        <nav>
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#nosotros">Quiénes Somos</a>
+            <a href="index.html#productos">Productos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Contenido de la Ficha Técnica -->
+    <section class="ficha-section">
+        <!-- Botón Volver -->
+        <a href="index.html#productos" class="volver-btn">← Volver a Productos</a>
+        
+        <!-- Imágenes con Medidas (Verticales) -->
+        <div class="galeria-imagenes">
+            <img src="img/productos/ficha-medida1.png" alt="Plano y medidas del amortiguador 1">
+            <img src="img/productos/ficha-medida2.png" alt="Plano y medidas del amortiguador 2">
+            <img src="img/productos/ficha-medida3.png" alt="Plano y medidas del amortiguador 3">
+        </div>
+
+        <!-- Datos Técnicos -->
+        <div class="ficha-detalles">
+            <h2>Especificaciones Técnicas</h2>
+            <ul class="lista-caracteristicas">
+                <li>Regulable en altura</li>
+                <li>Regulación de compresión</li>
+                <li>Regulación de rebote</li>
+                <li>Orings VITON</li>
+                <li>Reservorio remoto</li>
+                <li>100% reparable</li>
+                <li>100% regulable</li>
+                <li>6 Meses de garantía</li>
+                <li>Topmount rotulado</li>
+                <li>Bujes excentricos corrección de comba</li>
+                <li>Hecho en Bolivia</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AMS Shocks. Todos los derechos reservados.</p>
+        <p>ventas@amsshocks.com</p>
+    </footer>
+
+</body>
+</html>
