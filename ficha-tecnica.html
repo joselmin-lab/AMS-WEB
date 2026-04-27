@@ -139,7 +139,7 @@
         <a href="index.html#productos" class="volver-btn">← Volver a Productos</a>
         
         <div id="contenido-ficha">
-            <h1 id="titulo-producto" class="producto-titulo">Cargando...</h1>
+            <h1 id="titulo-producto" class="producto-titulo"></h1>
             <span id="categoria-producto" class="producto-categoria"></span>
 
             <!-- Imágenes con Medidas (Verticales) -->
@@ -178,7 +178,7 @@
             const productoId = urlParams.get('id');
 
             // 2. Buscar el producto en la base de datos (definida en js/datos.js)
-            const producto = productosDB[productoId];
+            const producto = typeof productosDB !== 'undefined' ? productosDB[productoId] : null;
 
             if (producto) {
                 // 3. Llenar los datos en el HTML
@@ -191,10 +191,6 @@
                     const img = document.createElement('img');
                     img.src = imgSrc;
                     img.alt = `Plano y medidas - ${producto.nombre}`;
-                    // En caso de que la imagen no exista en el servidor aún, ponemos un placeholder visual
-                    img.onerror = function() {
-                        this.src = 'https://via.placeholder.com/300x600/000000/ff6600?text=FOTO+PENDIENTE';
-                    };
                     galeria.appendChild(img);
                 });
 
