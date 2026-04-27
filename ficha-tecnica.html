@@ -29,6 +29,22 @@
             color: #fff;
         }
         
+        .producto-titulo {
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .producto-categoria {
+            color: #ff6600;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            display: block;
+        }
+
         /* Galería de imágenes verticales */
         .galeria-imagenes {
             display: grid;
@@ -92,11 +108,19 @@
             font-weight: bold;
             font-size: 1.4rem;
         }
+
+        /* Mensaje de error */
+        #error-mensaje {
+            display: none;
+            text-align: center;
+            padding: 50px;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Menú de Navegación (Enlaces apuntan a index.html) -->
+    <!-- Menú de Navegación -->
     <header>
         <a href="index.html" class="logo">
             <img src="img/logo.png" alt="Logo AMS Shocks">
@@ -114,29 +138,28 @@
         <!-- Botón Volver -->
         <a href="index.html#productos" class="volver-btn">← Volver a Productos</a>
         
-        <!-- Imágenes con Medidas (Verticales) -->
-        <div class="galeria-imagenes">
-            <img src="img/productos/ficha-medida1.png" alt="Plano y medidas del amortiguador 1">
-            <img src="img/productos/ficha-medida2.png" alt="Plano y medidas del amortiguador 2">
-            <img src="img/productos/ficha-medida3.png" alt="Plano y medidas del amortiguador 3">
+        <div id="contenido-ficha">
+            <h1 id="titulo-producto" class="producto-titulo">Cargando...</h1>
+            <span id="categoria-producto" class="producto-categoria"></span>
+
+            <!-- Imágenes con Medidas (Verticales) -->
+            <div id="galeria-producto" class="galeria-imagenes">
+                <!-- Las imágenes se inyectan por JS -->
+            </div>
+
+            <!-- Datos Técnicos -->
+            <div class="ficha-detalles">
+                <h2>Especificaciones Técnicas</h2>
+                <ul id="lista-especificaciones" class="lista-caracteristicas">
+                    <!-- Las especificaciones se inyectan por JS -->
+                </ul>
+            </div>
         </div>
 
-        <!-- Datos Técnicos -->
-        <div class="ficha-detalles">
-            <h2>Especificaciones Técnicas</h2>
-            <ul class="lista-caracteristicas">
-                <li>Regulable en altura</li>
-                <li>Regulación de compresión</li>
-                <li>Regulación de rebote</li>
-                <li>Orings VITON</li>
-                <li>Reservorio remoto</li>
-                <li>100% reparable</li>
-                <li>100% regulable</li>
-                <li>6 Meses de garantía</li>
-                <li>Topmount rotulado</li>
-                <li>Bujes excentricos corrección de comba</li>
-                <li>Hecho en Bolivia</li>
-            </ul>
+        <div id="error-mensaje">
+            <h2>Producto no encontrado</h2>
+            <p>Lo sentimos, no hemos podido cargar la información de este amortiguador.</p>
+            <a href="index.html#productos" class="btn btn-aviso" style="margin-top: 20px; display: inline-block;">Regresar</a>
         </div>
     </section>
 
@@ -146,5 +169,49 @@
         <p>ventas@amsshocks.com</p>
     </footer>
 
+    <!-- Cargar la base de datos simulada y el script funcional -->
+    <script src="js/datos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Obtener el ID del producto desde la URL (ej: ?id=ae92-delanteros)
+            const urlParams = new URLSearchParams(window.location.search);
+            const productoId = urlParams.get('id');
+
+            // 2. Buscar el producto en la base de datos (definida en js/datos.js)
+            const producto = productosDB[productoId];
+
+            if (producto) {
+                // 3. Llenar los datos en el HTML
+                document.getElementById('titulo-producto').textContent = producto.nombre;
+                document.getElementById('categoria-producto').textContent = producto.categoria;
+
+                // Llenar galería de imágenes
+                const galeria = document.getElementById('galeria-producto');
+                producto.imagenes.forEach(imgSrc => {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = `Plano y medidas - ${producto.nombre}`;
+                    // En caso de que la imagen no exista en el servidor aún, ponemos un placeholder visual
+                    img.onerror = function() {
+                        this.src = 'https://via.placeholder.com/300x600/000000/ff6600?text=FOTO+PENDIENTE';
+                    };
+                    galeria.appendChild(img);
+                });
+
+                // Llenar lista de especificaciones
+                const lista = document.getElementById('lista-especificaciones');
+                producto.especificaciones.forEach(espec => {
+                    const li = document.createElement('li');
+                    li.textContent = espec;
+                    lista.appendChild(li);
+                });
+
+            } else {
+                // 4. Si no existe el producto o entraron sin ID, mostrar error
+                document.getElementById('contenido-ficha').style.display = 'none';
+                document.getElementById('error-mensaje').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
