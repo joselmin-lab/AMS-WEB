@@ -373,12 +373,11 @@ body {
 
 .galeria-main-img {
     display: block;
-    max-width: 100%;
-    max-height: 580px; /* generous cap so tall portrait drawings don't overflow the section */
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    padding: 24px;
+    width: 100%;           /* Forzamos a ocupar todo el ancho */
+    height: 100%;          /* Forzamos a ocupar toda la altura */
+    max-height: 100%;      /* Quitamos el límite de 580px */
+    object-fit: contain;   /* Mantiene la proporción sin recortarse */
+    padding: 0;            /* Quitamos el espacio interno (estaba en 24px) */
     transition: opacity 0.18s ease;
 }
 

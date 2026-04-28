@@ -8,7 +8,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/ae92-delanteros-1.png",
-            "img/productos/ae92-delanteros-2.png"
+        
         ],
         especificaciones: [
             "Regulable en altura",
@@ -29,7 +29,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/ae92-traseros-1.png",
-            "img/productos/ae92-traseros-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
@@ -50,7 +50,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/swift-delanteros-1.png",
-            "img/productos/swift-delanteros-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
@@ -71,7 +71,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/g6-delanteros-570-1.png",
-            "img/productos/g6-delanteros-570-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
@@ -92,7 +92,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/g6-traseros-650-1.png",
-            "img/productos/g6-traseros-650-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
@@ -114,7 +114,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/g6-delanteros-640-1.png",
-            "img/productos/g6-delanteros-640-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
@@ -135,7 +135,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/g6-traseros-690-1.png",
-            "img/productos/g6-traseros-690-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
@@ -156,7 +156,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/vitz-delanteros-1.png",
-            "img/productos/vitz-delanteros-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
@@ -177,7 +177,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/wrx-delanteros-1.png",
-            "img/productos/wrx-delanteros-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
@@ -198,7 +198,7 @@ const productosDB = {
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/wrx-traseros-1.png",
-            "img/productos/wrx-traseros-2.png"
+            
         ],
         especificaciones: [
             "Regulable en altura",
