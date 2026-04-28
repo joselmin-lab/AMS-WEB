@@ -137,8 +137,9 @@
                 // Enter / Space → open lightbox (keyboard accessibility)
                 wrapper.addEventListener('keydown', (function (i) {
                     return function (e) {
+                        // Always prevent Space from scrolling the page on focusable wrappers
+                        if (e.key === ' ') { e.preventDefault(); }
                         if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
                             openLightbox(i);
                         }
                     };
