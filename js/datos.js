@@ -4,7 +4,7 @@ const productosDB = {
     // BITUBO KATSUMI
     // ==========================================
     "ae92-delanteros": {
-        nombre: "Toyota Ae92 Delanteros",
+        nombre: "Toyota Ae92 Delanteros 570mm",
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/ae92-delanteros-1.png",
@@ -25,7 +25,7 @@ const productosDB = {
         ]
     },
     "ae92-traseros": {
-        nombre: "Toyota Ae92 Traseros",
+        nombre: "Toyota Ae92 Traseros 650mm",
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/ae92-traseros-1.png",
@@ -67,7 +67,7 @@ const productosDB = {
         ]
     },
     "g6-delanteros": {
-        nombre: "Toyota G6 Delanteros",
+        nombre: "Toyota G6 Delanteros 570mm",
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/g6-delanteros-1.png",
@@ -88,7 +88,7 @@ const productosDB = {
         ]
     },
     "g6-traseros": {
-        nombre: "Toyota G6 Traseros",
+        nombre: "Toyota G6 Traseros 650mm",
         categoria: "Bitubo Katsumi",
         imagenes: [
             "img/productos/g6-traseros-1.png",
